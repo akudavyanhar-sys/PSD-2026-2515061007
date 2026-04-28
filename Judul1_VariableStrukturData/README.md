@@ -40,4 +40,6 @@ Output Program:
 <img width="779" height="581" alt="Screenshot 2026-04-27 201326" src="https://github.com/user-attachments/assets/bd80fd4a-a515-491f-94cc-0602c22a692b" />
 <img width="648" height="433" alt="Screenshot 2026-04-27 201156" src="https://github.com/user-attachments/assets/0ffc5fcd-5eee-4de1-a48e-efeee9cbf752" />
 
-Link Youtube: Penjelasan kode melalui video presentasi
+Link Youtube: 
+
+https://youtu.be/hTEGBOiNa3E
