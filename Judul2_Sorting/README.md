@@ -12,77 +12,38 @@ Source Code:
 
 Gambaran Umum
 
-# Penjelasan Per Baris Kode Program Ranking Siswa
+Fungsi tukar()
 
----
+Fungsi tukar() digunakan untuk menukar posisi dua elemen dalam sebuah array. Prosesnya diawali dengan menyimpan nilai pada indeks pertama ke dalam variabel sementara (temp) agar tidak hilang saat dilakukan penimpaan. Selanjutnya, nilai pada indeks kedua dipindahkan ke indeks pertama, dan nilai yang disimpan di temp ditempatkan kembali ke indeks kedua. Mekanisme ini dapat dianalogikan seperti menukar isi dua wadah yang membutuhkan satu wadah tambahan sebagai penampung sementara. Fungsi bubble_sort()
 
-## 🔷 Fungsi `tukar()`
+Fungsi bubble_sort() berperan dalam mengurutkan data menggunakan algoritma Bubble Sort. Proses pengurutan dilakukan melalui dua perulangan bertingkat (nested loop). Perulangan luar berjalan sebanyak n-1kali, yang menandakan jumlah tahapan pengurutan. Pada setiap tahap, satu elemen dengan nilai terbesar akan “naik” ke posisi yang semestinya. Sementara itu, perulangan dalam bertugas membandingkan elemen-elemen yang bersebelahan. Jumlah perbandingan akan semakin berkurang pada setiap iterasi karena sebagian data di bagian akhir sudah dalam kondisi terurut. Jika ditemukan bahwa nilai di posisi kiri lebih kecil dibandingkan dengan posisi kanan (dalam konteks pengurutan descending), maka kedua elemen tersebut akan ditukar menggunakan fungsi tukar(). Sebagai ilustrasi, misalkan terdapat tiga data siswa dengan total nilai: Aldi (416), Bella (444), dan Cindy (473). Pada iterasi pertama, Aldi dan Bella dibandingkan lalu ditukar, diikuti dengan perbandingan Aldi dan Cindy yang juga menghasilkan pertukaran. Iterasi berikutnya memastikan bahwa Cindy berada di posisi teratas karena sudah memiliki nilai tertinggi. Hasil akhirnya adalah urutan: Cindy, Bella dan Aldi.
 
-| Baris | Kode | Penjelasan |
-|---|---|---|
-| 1 | `def tukar(arr, i, j):` | Mendefinisikan fungsi bernama `tukar` yang menerima 3 parameter: `arr` (list data), `i` dan `j` (dua posisi indeks yang akan ditukar) |
-| 2 | `temp = arr[i]` | Menyimpan sementara data di posisi `i` ke variabel `temp`, agar tidak hilang saat ditimpa |
-| 3 | `arr[i] = arr[j]` | Mengisi posisi `i` dengan data yang ada di posisi `j` |
-| 4 | `arr[j] = temp` | Mengisi posisi `j` dengan data lama dari posisi `i` yang tadi disimpan di `temp` |
+Fungsi main()
 
----
+Input Jumlah Siswa
 
-## 🔷 Fungsi `bubble_sort()`
+Program terlebih dahulu meminta jumlah siswa yang akan dimasukkan. Untuk menjaga keandalan, digunakan mekanisme try/except guna menangani kesalahan input, seperti ketika pengguna memasukkan data non-numerik.
 
-| Baris | Kode | Penjelasan |
-|---|---|---|
-| 5 | `def bubble_sort(arr, n):` | Mendefinisikan fungsi `bubble_sort` yang menerima `arr` (list siswa) dan `n` (jumlah siswa) |
-| 6 | `for i in range(n - 1):` | Perulangan luar yang berjalan sebanyak `n-1` kali, mewakili jumlah putaran sorting |
-| 7 | `for j in range(n - i - 1):` | Perulangan dalam yang membandingkan dua elemen berdampingan, batas kanannya berkurang tiap putaran karena elemen terbesar sudah berada di posisi yang benar |
-| 8 | `if arr[j]["total"] < arr[j + 1]["total"]:` | Mengecek apakah total nilai di posisi `j` lebih kecil dari posisi `j+1`, jika iya berarti urutannya perlu dibalik (karena ingin descending) |
-| 9 | `tukar(arr, j, j + 1)` | Memanggil fungsi `tukar()` untuk menukar posisi `j` dan `j+1` agar yang bernilai lebih besar naik ke posisi kiri |
+Input Data Siswa
 
----
+Data siswa disimpan dalam sebuah list kosong. Program kemudian melakukan perulangan sebanyak jumlah siswa untuk menginput nama dan nilai. Nilai dimasukkan untuk lima semester secara berurutan, dengan validasi input pada setiap langkah agar hanya menerima angka. Seluruh nilai tersebut dijumlahkan dan disimpan sebagai total nilai. Setiap data siswa direpresentasikan dalam bentuk dictionary yang berisi pasangan nama dan total nilai, lalu ditambahkan ke dalam list.
 
-## 🔷 Fungsi `main()`
+Menampilkan Data Awal
 
-| Baris | Kode | Penjelasan |
-|---|---|---|
-| 10 | `def main():` | Mendefinisikan fungsi utama `main` sebagai pusat jalannya program |
-| 11 | `try:` | Memulai blok percobaan untuk menangkap kemungkinan error saat input |
-| 12 | `n = int(input("Masukkan jumlah siswa: "))` | Meminta pengguna memasukkan jumlah siswa dan mengubahnya menjadi bilangan bulat |
-| 13 | `except ValueError:` | Menangkap error jika pengguna memasukkan bukan angka (misal huruf atau simbol) |
-| 14 | `print("Input tidak valid!")` | Mencetak pesan error jika input jumlah siswa tidak valid |
-| 15 | `return` | Menghentikan fungsi `main()` jika terjadi error di atas |
-| 16 | `siswa = []` | Membuat list kosong bernama `siswa` sebagai wadah untuk menyimpan semua data siswa |
-| 17 | `print("\nMasukkan data siswa:")` | Mencetak judul bagian input data siswa ke layar |
-| 18 | `for i in range(n):` | Memulai perulangan sebanyak `n` kali, satu kali untuk setiap siswa |
-| 19 | `print(f"\nData siswa ke-{i+1}")` | Mencetak header yang menunjukkan siswa ke berapa yang sedang diinput (dimulai dari 1) |
-| 20 | `nama = input("Nama: ")` | Meminta pengguna memasukkan nama siswa dan menyimpannya di variabel `nama` |
-| 21 | `total = 0` | Menginisialisasi variabel `total` dengan nilai 0 sebagai akumulator penjumlahan nilai semester |
-| 22 | `for semester in range(1, 6):` | Memulai perulangan sebanyak 5 kali untuk input nilai dari semester 1 sampai semester 5 |
-| 23 | `while True:` | Memulai perulangan tak terbatas yang akan terus berulang sampai input nilai valid |
-| 24 | `try:` | Memulai blok percobaan untuk menangkap error saat input nilai |
-| 25 | `nilai = float(input(f"Nilai Semester {semester}: "))` | Meminta input nilai untuk semester tertentu dan mengubahnya menjadi bilangan desimal |
-| 26 | `total += nilai` | Menambahkan nilai semester yang baru diinput ke variabel `total` (akumulasi) |
-| 27 | `break` | Menghentikan perulangan `while True` karena input nilai sudah berhasil dan valid |
-| 28 | `except ValueError:` | Menangkap error jika pengguna memasukkan bukan angka untuk nilai semester |
-| 29 | `print("Input tidak valid, masukkan angka!")` | Mencetak pesan peringatan dan perulangan `while` akan mengulang input dari awal |
-| 30 | `siswa.append({"nama": nama, "total": total})` | Menyimpan data siswa berupa dictionary berisi nama dan total nilai ke dalam list `siswa` |
-| 31 | `print("\nData sebelum diurutkan:")` | Mencetak judul untuk menampilkan data siswa sebelum proses sorting |
-| 32 | `for s in siswa:` | Memulai perulangan untuk menelusuri setiap data siswa dalam list `siswa` |
-| 33 | `print(f"{s['nama']} - {s['total']}")` | Mencetak nama dan total nilai setiap siswa dalam urutan asli sebelum diurutkan |
-| 34 | `bubble_sort(siswa, n)` | Memanggil fungsi `bubble_sort()` untuk mengurutkan list `siswa` berdasarkan total nilai secara descending |
-| 35 | `print(f"\nHasil dari pengurutan {n} siswa:")` | Mencetak judul hasil ranking setelah proses sorting selesai |
-| 36 | `for i in range(n):` | Memulai perulangan sebanyak `n` kali untuk menampilkan hasil ranking satu per satu |
-| 37 | `print(f"Ranking {i+1}")` | Mencetak nomor ranking siswa (dimulai dari 1) |
-| 38 | `print(f"Nama  : {siswa[i]['nama']}")` | Mencetak nama siswa pada ranking tersebut |
-| 39 | `print(f"Total : {siswa[i]['total']}")` | Mencetak total nilai siswa pada ranking tersebut |
-| 40 | `print("-" * 30)` | Mencetak garis pemisah sepanjang 30 karakter untuk memperindah tampilan antar siswa |
+Sebelum proses pengurutan, program menampilkan seluruh data siswa sesuai urutan input. Hal ini bertujuan untuk memberikan gambaran kondisi data sebelum diolah lebih lanjut.
 
----
+Proses Pengurutan dan Penentuan Ranking
 
-## 🔷 Blok Eksekusi Utama
+Setelah fungsi bubble_sort() dijalankan, data siswa akan tersusun dari nilai tertinggi ke terendah. Program kemudian menampilkan daftar peringkat berdasarkan posisi masing-masing siswa dalam list yang telah terurut.
 
-| Baris | Kode | Penjelasan |
-|---|---|---|
-| 41 | `if __name__ == "__main__":` | Mengecek apakah file ini dijalankan langsung (bukan diimpor oleh file lain) |
-| 42 | `main()` | Jika kondisi di atas terpenuhi, maka fungsi `main()` dipanggil untuk memulai program |
+Blok Eksekusi Utama
+
+Struktur ini memastikan bahwa fungsi main() hanya dijalankan ketika program dieksekusi secara langsung, bukan saat file digunakan sebagai modul dalam program lain.
+
+Kesimpulan
+
+Program ini mengintegrasikan beberapa konsep dasar dalam pemrograman, yaitu penggunaan algoritma Bubble Sort untuk pengurutan secara descending, struktur data dictionary untuk menyimpan pasangan nama dan nilai, serta list sebagai wadah utama data. Selain itu, validasi input dilakukan melalui mekanisme try/except untuk mencegah kesalahan saat eksekusi. Proses pengurutan memanfaatkan nested loop, sedangkan perhitungan total nilai dilakukan melalui teknik akumulasi secara bertahap.
+
 
 Link Youtube: Penjelasan kode dan contoh penggunaannya
 
