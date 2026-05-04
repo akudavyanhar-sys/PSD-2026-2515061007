@@ -45,5 +45,5 @@ Kesimpulan
 Program ini mengintegrasikan beberapa konsep dasar dalam pemrograman, yaitu penggunaan algoritma Bubble Sort untuk pengurutan secara descending, struktur data dictionary untuk menyimpan pasangan nama dan nilai, serta list sebagai wadah utama data. Selain itu, validasi input dilakukan melalui mekanisme try/except untuk mencegah kesalahan saat eksekusi. Proses pengurutan memanfaatkan nested loop, sedangkan perhitungan total nilai dilakukan melalui teknik akumulasi secara bertahap.
 
 
-Link Youtube: Penjelasan kode dan contoh penggunaannya
+Link Youtube: https://youtu.be/bvZx_jm7X_g
 
