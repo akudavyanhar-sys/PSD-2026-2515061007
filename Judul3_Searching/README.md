@@ -10,7 +10,7 @@ Selain pencarian, program juga dilengkapi fungsi untuk menentukan posisi kursi s
 
 Source Code:
 
-<img width="1494" height="2876" alt="image" src="https://github.com/user-attachments/assets/c3566dda-4b6a-48a9-a3be-449573f49c5a" />
+<img width="1494" height="2876" alt="image" src="https://github.com/user-attachments/assets/396caeaf-9d80-4774-8828-7d373c2024be" />
 
 Gambaran Umum
 
