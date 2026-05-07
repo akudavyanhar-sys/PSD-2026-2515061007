@@ -46,6 +46,6 @@ Output Program:
 <img width="514" height="232" alt="Screenshot 2026-05-05 201905" src="https://github.com/user-attachments/assets/16ae4738-1d4e-457d-8d12-217496b1d3eb" />
 <img width="503" height="597" alt="Screenshot 2026-05-05 201916" src="https://github.com/user-attachments/assets/5962553f-a9bc-4256-9791-aaac1b718c15" />
 
-Link Youtube: Penjelasan per kode
+Link Youtube: https://youtu.be/YoHR2Z5urxs
 
 
