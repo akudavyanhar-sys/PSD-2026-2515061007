@@ -33,7 +33,7 @@ def get_posisi(nomor):
 
 
 def main():
-    # Data otomatis 1–200 (sudah terurut → syarat Binary Search terpenuhi)
+    # Data otomatis 1–200
     arr = list(range(1, 201))
     n = len(arr)
 
