@@ -62,7 +62,7 @@ Output Program:
 
 <img width="353" height="782" alt="Screenshot 2026-05-16 201853" src="https://github.com/user-attachments/assets/5c5519fc-6c6c-440d-aba4-c5b1721fa621" />
 
-Link Youtube: Penjelasan kode program.
+Link Youtube: (https://youtu.be/xYBLr4g8VEM)
 
 
 
